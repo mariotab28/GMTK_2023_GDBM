@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(MatchTimer))]
 public class MatchLogic : MonoBehaviour
 {
     public MatchDefinition matchDefinition;
     public UIPrintingController uIPrintingController;
+    public UnityEvent resetPositionsEvent;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
@@ -59,8 +61,20 @@ public class MatchLogic : MonoBehaviour
 
     public void AddScore(PlayerNumber playerNumber)
     {
+        FreezeMatch();
+
         PlayerInfo player = playersInfo.Find((player) => player.PlayerNumber == playerNumber);
         player.AddScore(1);
         uIPrintingController.score.PrintScore(player);
+
+        uIPrintingController.goalUIController.PlayGoalAnimation(player);
     }
+
+    public void ContinueMatchAfterScore()
+    {
+        // Reset ball
+        ResumeMatch();
+        resetPositionsEvent.Invoke();
+    }
+
 }
