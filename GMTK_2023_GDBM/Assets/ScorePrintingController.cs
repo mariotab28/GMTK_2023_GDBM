@@ -5,19 +5,37 @@ using TMPro;
 
 public class ScorePrintingController : MonoBehaviour
 {
-    public List<PlayerAttachedUICollection> scoresPerPlayer;
+    public List<UIAttachedToPlayer> scoresPerPlayer;
+    public int startingScore = 0;
+
+    void Start()
+    {
+        InitializeScores();
+    }
 
     public void PrintScore(PlayerInfo playerInfo)
     {
-        TextMeshProUGUI targetText = scoresPerPlayer.Find((item) => item.playerNumber == playerInfo.PlayerNumber).UITextElement;
+        UIAttachedToPlayer uIAttachedToPlayerSetting = scoresPerPlayer.Find(
+            (item) => item.playerNumber == playerInfo.PlayerNumber
+        );
+        TextMeshProUGUI targetText = uIAttachedToPlayerSetting.uITextElement;
         targetText.text = playerInfo.Score.ToString();
     }
 
+    private void InitializeScores()
+    {
+        scoresPerPlayer.ForEach(
+            (UIAttachedToPlayer) =>
+            {
+                UIAttachedToPlayer.uITextElement.text = startingScore.ToString();
+            }
+        );
+    }
 }
 
 [System.Serializable]
-public class PlayerAttachedUICollection
+public class UIAttachedToPlayer
 {
     public PlayerNumber playerNumber;
-    public TextMeshProUGUI UITextElement;
+    public TextMeshProUGUI uITextElement;
 }

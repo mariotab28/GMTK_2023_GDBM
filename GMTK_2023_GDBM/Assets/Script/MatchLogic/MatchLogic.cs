@@ -6,7 +6,7 @@ using UnityEngine;
 public class MatchLogic : MonoBehaviour
 {
     public MatchDefinition matchDefinition;
-    public ScorePrintingController scorePrintingController;
+    public UIPrintingController UIPrintingController;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
@@ -36,11 +36,11 @@ public class MatchLogic : MonoBehaviour
         }
     }
 
-    public void AddScore(int amount, PlayerNumber playerNumber)
+    public void AddScore(PlayerNumber playerNumber)
     {
         PlayerInfo player = playersInfo.Find((player) => player.PlayerNumber == playerNumber);
-        player.AddScore(amount);
-        scorePrintingController.PrintScore(player);
+        player.AddScore(1);
+        UIPrintingController.score.PrintScore(player);
     }
 
 }
