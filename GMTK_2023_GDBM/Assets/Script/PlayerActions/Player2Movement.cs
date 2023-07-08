@@ -27,7 +27,7 @@ public class Player2Movement : PlayerController
         CheckSprintInput();
 
         // Check dash
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire2"))
             kick.Activate();
     }
 
