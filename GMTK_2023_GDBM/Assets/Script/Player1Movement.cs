@@ -22,6 +22,10 @@ public class Player1Movement : MonoBehaviour
     {
         directionX = Input.GetAxisRaw("HorizontalKeyboardPlayer1");
         directionY = Input.GetAxisRaw("VerticalKeyboardPlayer1");
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            directionX = 1;
+        }
 
         PlayerDirection = new Vector2(directionX, directionY).normalized;
     }

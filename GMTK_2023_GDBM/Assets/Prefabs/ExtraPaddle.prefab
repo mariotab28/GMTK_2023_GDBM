@@ -1,19 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3536201491134959156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7285835638421432906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37b3deb2eb4fc74184549bc519aa545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 9
---- !u!1001 &6708766750940320929
+--- !u!1001 &118020057419596692
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4036966040012488427, guid: fde7416f33e8054489fe2793bfe8ac75, type: 3}
       propertyPath: m_Name
-      value: Player2Paddle
+      value: ExtraPaddle
       objectReference: {fileID: 0}
     - target: {fileID: 9006214917894855111, guid: fde7416f33e8054489fe2793bfe8ac75, type: 3}
       propertyPath: m_RootOrder
@@ -68,10 +55,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4877578547916337953, guid: fde7416f33e8054489fe2793bfe8ac75, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fde7416f33e8054489fe2793bfe8ac75, type: 3}
---- !u!1 &7285835638421432906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4036966040012488427, guid: fde7416f33e8054489fe2793bfe8ac75, type: 3}
-  m_PrefabInstance: {fileID: 6708766750940320929}
-  m_PrefabAsset: {fileID: 0}
