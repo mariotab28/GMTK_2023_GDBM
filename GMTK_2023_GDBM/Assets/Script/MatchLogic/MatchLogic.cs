@@ -38,8 +38,8 @@ public class MatchLogic : MonoBehaviour
         DefinePlayers();
         matchTimer.SetUp(matchDefinition.matchSecondsDuration);
         matchTimer.Start();
-        FreezeMatch();
         uIPrintingController.startMenuController.StartStartingMatchAnimation();
+        // FreezeMatch();
     }
 
     public void StartMatch()

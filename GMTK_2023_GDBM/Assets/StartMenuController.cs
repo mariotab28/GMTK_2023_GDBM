@@ -8,14 +8,10 @@ public class StartMenuController : MonoBehaviour
     public UnityEvent matchLogic;
     public Animator startMenuAnimator;
 
-    void Start()
-    {
-        startMenuAnimator.enabled = false;
-    }
 
     public void StartStartingMatchAnimation()
     {
-        startMenuAnimator.enabled = true;
+        startMenuAnimator.SetTrigger("Start");
     }
 
     public void StartMatchEvent()
