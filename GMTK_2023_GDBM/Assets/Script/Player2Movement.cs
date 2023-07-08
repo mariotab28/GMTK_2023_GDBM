@@ -3,20 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Movement : MonoBehaviour
+public class Player2Movement : PlayerController
 {
-    private Rigidbody2D rigBody;
 
-    public float playerSpeed;
-    private Vector2 PlayerDirection;
-    private float directionX;
-    private float directionY;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigBody = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void Update() 
@@ -24,11 +13,26 @@ public class Player2Movement : MonoBehaviour
         directionX = Input.GetAxisRaw("HorizontalKeyboardPlayer2");
         directionY = Input.GetAxisRaw("VerticalKeyboardPlayer2");
 
+        if (directionX == 0 && directionY == 0)
+        {
+            directionX = Input.GetAxisRaw("HorizontalGamepadPlayer2");
+            directionY = -Input.GetAxisRaw("VerticalGamepadPlayer2");
+        }
+
         PlayerDirection = new Vector2(directionX, directionY).normalized;
+
+        movement.SetDirection(PlayerDirection);
+
+        // Check sprint
+        if (Input.GetKeyDown(KeyCode.RightShift))
+            movement.SetSpeed(sprintSpeed);
+
+        if (Input.GetKeyUp(KeyCode.RightShift))
+            movement.SetSpeed(defaultSpeed);
+
+        // Check dash
+        if (Input.GetKeyDown(KeyCode.Space))
+            print("DASH");//movement.SetSpeed(sprintSpeed);
     }
 
-    void FixedUpdate() 
-    {
-        rigBody.velocity = new Vector2(PlayerDirection.x * playerSpeed, PlayerDirection.y * playerSpeed);
-    }
 }

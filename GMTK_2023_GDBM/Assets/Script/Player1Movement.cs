@@ -2,36 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Movement : MonoBehaviour
+public class Player1Movement : PlayerController
 {
-    private Rigidbody2D rigBody;
-
-    public float playerSpeed;
-    private Vector2 PlayerDirection;
-    private float directionX;
-    private float directionY;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigBody = GetComponent<Rigidbody2D>();
-    }
+    
 
     // Update is called once per frame
     void Update() 
     {
+        // Check direction
         directionX = Input.GetAxisRaw("HorizontalKeyboardPlayer1");
         directionY = Input.GetAxisRaw("VerticalKeyboardPlayer1");
-        if(Input.GetKeyDown(KeyCode.S))
+
+        if (directionX == 0 && directionY == 0)
         {
-            directionX = 1;
+            print(directionX + ", " + directionY);
+            directionX = Input.GetAxisRaw("HorizontalGamepadPlayer1");
+            directionY = -Input.GetAxisRaw("VerticalGamepadPlayer1");
         }
 
         PlayerDirection = new Vector2(directionX, directionY).normalized;
+        movement.SetDirection(PlayerDirection);
+
+        // Check sprint
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetAxisRaw("SprintGamepadPlayer1") > 0)
+            movement.SetSpeed(sprintSpeed);
+
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetAxisRaw("SprintGamepadPlayer1") <= 0)
+            movement.SetSpeed(defaultSpeed);
+
+        // Check dash
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            print("DASH");//movement.SetSpeed(sprintSpeed);
     }
 
-    void FixedUpdate() 
-    {
-        rigBody.velocity = new Vector2(PlayerDirection.x * playerSpeed, PlayerDirection.y * playerSpeed);
-    }
+    
 }
