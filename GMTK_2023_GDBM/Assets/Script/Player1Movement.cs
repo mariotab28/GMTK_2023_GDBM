@@ -15,7 +15,6 @@ public class Player1Movement : PlayerController
 
         if (directionX == 0 && directionY == 0)
         {
-            print(directionX + ", " + directionY);
             directionX = Input.GetAxisRaw("HorizontalGamepadPlayer1");
             directionY = -Input.GetAxisRaw("VerticalGamepadPlayer1");
         }
