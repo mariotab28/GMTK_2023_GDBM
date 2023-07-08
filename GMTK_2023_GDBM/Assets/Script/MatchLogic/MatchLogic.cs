@@ -10,6 +10,7 @@ public class MatchLogic : MonoBehaviour
     public UIPrintingController uIPrintingController;
     public UnityEvent resetPositionsEvent;
     public StartMenuController startMenuController;
+    public HandicupController handicupController;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
@@ -69,6 +70,8 @@ public class MatchLogic : MonoBehaviour
         uIPrintingController.score.PrintScore(player);
 
         uIPrintingController.goalUIController.PlayGoalAnimation(player);
+        handicupController.addHandicup(player);
+
     }
 
     public void ContinueMatchAfterScore()
