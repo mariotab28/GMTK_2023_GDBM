@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : MonoBehaviour
+public class Canon : MonoBehaviour, IGenericHandicup
 {
     public GameObject prefab;
     public UnityEngine.Vector3 initialDirectionVector;
     public int initialVelocity;
     public UnityEngine.Vector3 spawnPosition;
     public float spawnTimer;
+
+    public int handicupNumber;
+    public PlayerInfo playerInfo;
 
     [ContextMenu("Spawn Object")]
     public void SpawnObj(){
@@ -23,9 +26,7 @@ public class Canon : MonoBehaviour
         InvokeRepeating("SpawnObj", spawnTimer, spawnTimer);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void SetPlayerInfo( PlayerInfo player){
+        playerInfo = player;
     }
 }

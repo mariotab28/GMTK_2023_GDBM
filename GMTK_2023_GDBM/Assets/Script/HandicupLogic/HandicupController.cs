@@ -31,9 +31,10 @@ public class HandicupController : MonoBehaviour
         GameObject hc;
 
         if(player.PlayerNumber == 0){ // Player 1
-        int index = Random.Range(0, 3);
-        hc = _handicupObjListPlayer1[index];
-        GenericHandicup gHScript = hc.GetComponent<GenericHandicup>();
+            int index = Random.Range(0, 3);
+            hc = _handicupObjListPlayer1[index];
+            IGenericHandicup gHScript = gameObject.GetComponent<IGenericHandicup>();
+            gHScript.setPlayerInfo(playerInfo);
 
             if(gHScript.handicupNumber == 3){ // Inverted Velocity Booster
                 spawnPosition = boostListPlayer1[_boostListPlayer1Index];
@@ -55,7 +56,8 @@ public class HandicupController : MonoBehaviour
         } else{ // Player 2
             int index = Random.Range(0, 3);
             hc = _handicupObjListPlayer2[index];
-            GenericHandicup gHScript = hc.GetComponent<GenericHandicup>();
+            IGenericHandicup gHScript = gameObject.GetComponent<IGenericHandicup>();
+            gHScript.setPlayerInfo(playerInfo);
 
             if(gHScript.handicupNumber == 3){ // Inverted Velocity Booster
                 spawnPosition = boostListPlayer2[_boostListPlayer2Index];
@@ -76,6 +78,6 @@ public class HandicupController : MonoBehaviour
             }
         }
         
-        GameObject obj = Instantiate(hc, spawnPosition);
+        Instantiate(hc, spawnPosition);
     }
 }

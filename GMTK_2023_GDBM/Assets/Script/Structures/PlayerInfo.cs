@@ -8,6 +8,8 @@ public class PlayerInfo
     GameObject assignedGoal;
 
     public PlayerNumber PlayerNumber { get { return playerNumber;} }
+    public GameObject AssignedPaddle { get { return assignedPaddle;} }
+    public GameObject AssignedGoal { get { return assignedGoal;} }
     public int Score { get { return score; }}
 
     public PlayerInfo(PlayerNumber playerNumber, GameObject paddle, GameObject goal)
