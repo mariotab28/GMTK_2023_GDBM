@@ -9,6 +9,7 @@ public class UIPrintingController : MonoBehaviour
     [HideInInspector]
     public ScorePrintingController score;
     public StartMenuController startMenuController;
+    public GoalUIController goalUIController;
 
 
     void Start()
