@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     // Player components
     protected Movement movement;
+    protected Kick kick;
 
     private Vector3 startingPosition;
     private Quaternion startingRotation;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         movement = GetComponent<Movement>();
+        kick = GetComponent<Kick>();
 
         startingPosition = transform.position;
         startingRotation = transform.rotation;
