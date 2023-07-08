@@ -6,6 +6,8 @@ public class InvertedSpeedBooster : MonoBehaviour
 {
     public Vector2 playerGoalCenter;
     public float accMulti;
+    public List<Transform> player1BoostPlacement;
+    public List<Transform> player2BoostPlacement;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,10 @@ public class InvertedSpeedBooster : MonoBehaviour
     {
         if(other.gameObject.tag == "Ball"){
             if(other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
-            Vector2 acceleratedVector = playerGoalCenter * accMulti;
-            //rb.AddForce(acceleratedVector, ForceMode2D.Impulse);
-            rb.velocity = acceleratedVector;
-        }
+                
+                Vector2 acceleratedVector = (playerGoalCenter - new Vector2(rb.transform.position.x, rb.transform.position.y)) * accMulti;
+                rb.velocity = acceleratedVector;
+            }
         }
     }
 
