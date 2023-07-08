@@ -35,4 +35,9 @@ public class MatchLogic : MonoBehaviour
         }
     }
 
+    private void AddScore()
+    {
+        
+    }
+
 }

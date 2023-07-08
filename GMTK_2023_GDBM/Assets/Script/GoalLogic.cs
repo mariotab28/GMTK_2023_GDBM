@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class GoalLogic : MonoBehaviour
 {
-    UnityEvent collideWithGoal;
+    public UnityEvent collideWithGoal;
 
     // Start is called before the first frame update
     void Start()
