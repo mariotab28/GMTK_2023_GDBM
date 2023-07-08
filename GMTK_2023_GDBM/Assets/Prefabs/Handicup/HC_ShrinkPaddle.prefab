@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6443022527560802234}
+  - component: {fileID: 7062117182148452253}
   m_Layer: 0
-  m_Name: ShrinkPaddle
+  m_Name: HC_ShrinkPaddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,3 +31,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7062117182148452253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919133631812435106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8b70a9b8bb1f84a92a2608cfd7446f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectedPlayer: 1
+  sizeReductionMulti: 0.5

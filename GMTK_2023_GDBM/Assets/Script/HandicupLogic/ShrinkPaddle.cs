@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class ShrinkPaddle : MonoBehaviour
 {
-    public GameObject[] respawns;
+    private GameObject paddleObj;
     public int affectedPlayer;
+    [Range(0, 1)]
+    public float sizeReductionMulti;
     // Start is called before the first frame update
     void Start()
     {
-        respawns = GameObject.FindGameObjectsWithTag("PaddlePlayer2");
+        if(affectedPlayer == 0){
+            paddleObj = GameObject.FindGameObjectsWithTag("PaddlePlayer1")[0];
+        } else {
+            paddleObj = GameObject.FindGameObjectsWithTag("PaddlePlayer2")[0];
+        }
+        
+        paddleObj.transform.localScale = new Vector3(sizeReductionMulti, sizeReductionMulti, sizeReductionMulti);
     }
 
     // Update is called once per frame
