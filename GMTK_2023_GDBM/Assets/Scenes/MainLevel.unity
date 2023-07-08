@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &527097246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6241721896701968861, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+  m_PrefabInstance: {fileID: 1438757580766629545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade11b9cfbcc0f944a2d3020743fc363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &937948948
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427631600534461817, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: startMenuController
+      value: 
+      objectReference: {fileID: 527097246}
     - target: {fileID: 427631600865942492, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_Camera
       value: 
@@ -413,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 3947542578688342253, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241721897413172028, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -35.35048
       objectReference: {fileID: 0}
     - target: {fileID: 7341747483890835408, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_Name

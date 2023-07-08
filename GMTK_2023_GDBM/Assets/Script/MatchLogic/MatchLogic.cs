@@ -9,6 +9,7 @@ public class MatchLogic : MonoBehaviour
     public MatchDefinition matchDefinition;
     public UIPrintingController uIPrintingController;
     public UnityEvent resetPositionsEvent;
+    public StartMenuController startMenuController;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
@@ -39,7 +40,7 @@ public class MatchLogic : MonoBehaviour
         matchTimer.SetUp(matchDefinition.matchSecondsDuration);
         matchTimer.Start();
         uIPrintingController.startMenuController.StartStartingMatchAnimation();
-        // FreezeMatch();
+        FreezeMatch();
     }
 
     public void StartMatch()
