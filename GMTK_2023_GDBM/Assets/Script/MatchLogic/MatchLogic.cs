@@ -6,14 +6,14 @@ using UnityEngine;
 public class MatchLogic : MonoBehaviour
 {
     public MatchDefinition matchDefinition;
-    public UIPrintingController UIPrintingController;
+    public UIPrintingController uIPrintingController;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
     private void Start()
     {
         GetDependencies();
-        StartMatch();
+        TriggerStartMatchProcess();
     }
 
     private void GetDependencies()
@@ -21,18 +21,39 @@ public class MatchLogic : MonoBehaviour
         matchTimer = GetComponent<MatchTimer>();
     }
 
-    private void StartMatch()
+    private void FreezeMatch()
+    {
+        Time.timeScale = 0;
+    }
+
+    private void ResumeMatch()
+    {
+        Time.timeScale = 1;
+    }
+
+    private void TriggerStartMatchProcess()
     {
         DefinePlayers();
         matchTimer.SetUp(matchDefinition.matchSecondsDuration);
         matchTimer.Start();
+        FreezeMatch();
+        uIPrintingController.startMenuController.StartStartingMatchAnimation();
+    }
+
+    public void StartMatch()
+    {
+        ResumeMatch();
     }
 
     private void DefinePlayers()
     {
         if (matchDefinition.matchType == MatchType.Multiplayer1v1)
         {
-            playersInfo = new List<PlayerInfo>{new PlayerInfo(PlayerNumber.PlayerOne), new PlayerInfo(PlayerNumber.PlayerTwo)};
+            playersInfo = new List<PlayerInfo>
+            {
+                new PlayerInfo(PlayerNumber.PlayerOne),
+                new PlayerInfo(PlayerNumber.PlayerTwo)
+            };
         }
     }
 
@@ -40,7 +61,6 @@ public class MatchLogic : MonoBehaviour
     {
         PlayerInfo player = playersInfo.Find((player) => player.PlayerNumber == playerNumber);
         player.AddScore(1);
-        UIPrintingController.score.PrintScore(player);
+        uIPrintingController.score.PrintScore(player);
     }
-
 }

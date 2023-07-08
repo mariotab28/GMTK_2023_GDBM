@@ -8,6 +8,8 @@ public class UIPrintingController : MonoBehaviour
     public TimerPrintingController timer;
     [HideInInspector]
     public ScorePrintingController score;
+    public StartMenuController startMenuController;
+
 
     void Start()
     {

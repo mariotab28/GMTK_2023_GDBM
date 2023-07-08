@@ -24,6 +24,7 @@ public class MatchTimer : MonoBehaviour
     public void Start()
     {
         currentTime = totalCountdownTime;
+        timerPrintingController.Print(currentTime);
         countingDown = true;
     }
 
