@@ -24,7 +24,7 @@ public class TimerPrintingController : MonoBehaviour
         {
             toPrint += printedMinutes + ":";
         }
-        toPrint += printedSeconds;
+        toPrint += printedSeconds < 10 ? "0" + printedSeconds.ToString() : printedSeconds.ToString();
         return toPrint;
     }
 }

@@ -25,12 +25,12 @@ public class MatchLogic : MonoBehaviour
         matchTimer = GetComponent<MatchTimer>();
     }
 
-    private void FreezeMatch()
+    public void FreezeMatch()
     {
         Time.timeScale = 0;
     }
 
-    private void ResumeMatch()
+    public void ResumeMatch()
     {
         Time.timeScale = 1;
     }
@@ -61,6 +61,30 @@ public class MatchLogic : MonoBehaviour
         }
     }
 
+    public PlayerInfo GetWinningPlayer()
+    {
+        PlayerInfo winningPlayer;
+        PlayerInfo playerOne = playersInfo.Find(
+            (player) => player.PlayerNumber == PlayerNumber.PlayerOne
+        );
+        PlayerInfo playerTwo = playersInfo.Find(
+            (player) => player.PlayerNumber == PlayerNumber.PlayerTwo
+        );
+        if (playerOne.Score == playerTwo.Score)
+        {
+            winningPlayer = null;
+        }
+        else if (playerOne.Score > playerTwo.Score)
+        {
+            winningPlayer = playerOne;
+        }
+        else
+        {
+            winningPlayer = playerTwo;
+        }
+        return winningPlayer;
+    }
+
     public void AddScore(PlayerNumber playerNumber)
     {
         FreezeMatch();
@@ -71,7 +95,6 @@ public class MatchLogic : MonoBehaviour
 
         uIPrintingController.goalUIController.PlayGoalAnimation(player);
         handicupController.addHandicup(player);
-
     }
 
     public void ContinueMatchAfterScore()
@@ -80,5 +103,4 @@ public class MatchLogic : MonoBehaviour
         ResumeMatch();
         resetPositionsEvent.Invoke();
     }
-
 }

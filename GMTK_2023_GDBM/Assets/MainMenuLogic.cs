@@ -25,7 +25,7 @@ public class MainMenuLogic : MonoBehaviour
     }
 
     public void StartGame(){
-        SceneManager.LoadScene("MainLevel",LoadSceneMode.Single);
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void ChangeVolume(float value){

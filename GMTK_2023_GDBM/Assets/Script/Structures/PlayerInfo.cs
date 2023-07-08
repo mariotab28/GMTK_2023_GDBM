@@ -18,4 +18,10 @@ public class PlayerInfo
     {
         score += amount;
     }
+
+    public bool Is(PlayerNumber playerNumber)
+    {
+        return playerNumber == this.playerNumber;
+    }
+
 }

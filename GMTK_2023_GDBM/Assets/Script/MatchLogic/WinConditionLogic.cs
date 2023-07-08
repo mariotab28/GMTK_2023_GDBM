@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class WinConditionLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public EndOfMatchUIController endOfMatchUIController;
+    private MatchLogic matchLogic;
+
     void Start()
     {
-        
+        matchLogic = GetComponent<MatchLogic>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FinishMatchAndDeclareWinner()
     {
-        
+        PlayerInfo winningPlayer = matchLogic.GetWinningPlayer();
+        matchLogic.FreezeMatch();
+        endOfMatchUIController.StartEndOfMatchAnimation(winningPlayer);
     }
+
 }
