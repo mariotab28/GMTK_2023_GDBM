@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class PlayerInfo
 {
-    int playerNumber;
+    PlayerNumber playerNumber;
     int score;
 
-    public int Number { get { return playerNumber;} }
+    public PlayerNumber PlayerNumber { get { return playerNumber;} }
     public int Score { get { return score; }}
 
-    public PlayerInfo(int playerNumber)
+    public PlayerInfo(PlayerNumber playerNumber)
     {
         this.playerNumber = playerNumber;
         score = 0;
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
     }
 }

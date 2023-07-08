@@ -5,16 +5,9 @@ using UnityEngine.Events;
 
 public class GoalLogic : MonoBehaviour
 {
-    public UnityEvent collideWithGoal;
+    public PlayerNumber playerWhoScoresHere;
+    public UnityEvent<PlayerNumber> collideWithGoal;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (collideWithGoal == null)
-            collideWithGoal = new UnityEvent();
-
-        collideWithGoal.AddListener(ScorePoint);
-    }
 
     // Update is called once per frame
     void Update()
@@ -25,7 +18,7 @@ public class GoalLogic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.gameObject.tag == "Ball"){
-            collideWithGoal.Invoke();
+            collideWithGoal.Invoke(playerWhoScoresHere);
         }
     }
 

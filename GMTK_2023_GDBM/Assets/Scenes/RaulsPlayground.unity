@@ -367,8 +367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoresPerPlayer:
-  - {fileID: 1102324725}
-  - {fileID: 1129914849}
+  - playerNumber: 0
+    UITextElement: {fileID: 1102324725}
+  - playerNumber: 0
+    UITextElement: {fileID: 1129914849}
 --- !u!1 &513647816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1390086445999977757, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
@@ -479,6 +481,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2110507392}
     m_Modifications:
+    - target: {fileID: -6904169802509704833, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
+      propertyPath: collideWithGoal.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6904169802509704833, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
+      propertyPath: collideWithGoal.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6904169802509704833, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
+      propertyPath: collideWithGoal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1595627957}
+    - target: {fileID: -6904169802509704833, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
+      propertyPath: collideWithGoal.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -3906759094900802111, guid: a587ab6ed4c2c9a48aa77eef652d85aa, type: 3}
       propertyPath: m_IsTrigger
       value: 1
