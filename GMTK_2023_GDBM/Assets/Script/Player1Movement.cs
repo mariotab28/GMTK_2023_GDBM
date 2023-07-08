@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player1Movement : PlayerController
 {
-    
+    private bool usingGamepad = false;
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
         // Check direction
         directionX = Input.GetAxisRaw("HorizontalKeyboardPlayer1");
@@ -24,16 +24,34 @@ public class Player1Movement : PlayerController
         movement.SetDirection(PlayerDirection);
 
         // Check sprint
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetAxisRaw("SprintGamepadPlayer1") > 0)
-            movement.SetSpeed(sprintSpeed);
-
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetAxisRaw("SprintGamepadPlayer1") <= 0)
-            movement.SetSpeed(defaultSpeed);
+        CheckSprintInput();
 
         // Check dash
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
             print("DASH");//movement.SetSpeed(sprintSpeed);
     }
 
-    
+
+    private void CheckSprintInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            movement.SetSpeed(sprintSpeed);
+            usingGamepad = false;
+        }
+
+        if (Input.GetAxisRaw("SprintGamepadPlayer1") > 0)
+        {
+            movement.SetSpeed(sprintSpeed);
+            usingGamepad = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !usingGamepad)
+            movement.SetSpeed(defaultSpeed);
+
+        if (Input.GetAxisRaw("SprintGamepadPlayer1") <= 0 && usingGamepad)
+            movement.SetSpeed(defaultSpeed);
+
+    }
+
 }
