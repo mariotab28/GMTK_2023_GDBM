@@ -11,6 +11,7 @@ public class MatchLogic : MonoBehaviour
     public UnityEvent resetPositionsEvent;
     public StartMenuController startMenuController;
     public HandicupController handicupController;
+    public List<PlayerAssignedElements> playerAssignedElements;
     private List<PlayerInfo> playersInfo;
     private MatchTimer matchTimer;
 
@@ -53,10 +54,12 @@ public class MatchLogic : MonoBehaviour
     {
         if (matchDefinition.matchType == MatchType.Multiplayer1v1)
         {
+            PlayerAssignedElements pOneElems = playerAssignedElements.Find((definition) => definition.playerNumber == PlayerNumber.PlayerOne);
+            PlayerAssignedElements pTwoElems = playerAssignedElements.Find((definition) => definition.playerNumber == PlayerNumber.PlayerTwo);
             playersInfo = new List<PlayerInfo>
             {
-                new PlayerInfo(PlayerNumber.PlayerOne),
-                new PlayerInfo(PlayerNumber.PlayerTwo)
+                new PlayerInfo(PlayerNumber.PlayerOne, pTwoElems.paddle, pTwoElems.goal),
+                new PlayerInfo(PlayerNumber.PlayerTwo, pTwoElems.paddle, pTwoElems.goal)
             };
         }
     }
@@ -103,4 +106,12 @@ public class MatchLogic : MonoBehaviour
         ResumeMatch();
         resetPositionsEvent.Invoke();
     }
+}
+
+[System.Serializable]
+public class PlayerAssignedElements
+{
+    public PlayerNumber playerNumber;
+    public GameObject paddle;
+    public GameObject goal;
 }

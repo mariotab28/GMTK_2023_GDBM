@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class HandicupController : MonoBehaviour
@@ -33,7 +31,7 @@ public class HandicupController : MonoBehaviour
         GameObject hc;
 
         if(player.PlayerNumber == 0){ // Player 1
-        int index = UnityEngine.Random.RangeInt(0, 3);
+        int index = Random.Range(0, 3);
         hc = _handicupObjListPlayer1[index];
         GenericHandicup gHScript = hc.GetComponent<GenericHandicup>();
 
@@ -55,7 +53,7 @@ public class HandicupController : MonoBehaviour
                 spawnPosition = new GameObject().transform;
             }
         } else{ // Player 2
-            int index = Mathf.FloorToInt(UnityEngine.Random.Range(0f, 3f));
+            int index = Random.Range(0, 3);
             hc = _handicupObjListPlayer2[index];
             GenericHandicup gHScript = hc.GetComponent<GenericHandicup>();
 
