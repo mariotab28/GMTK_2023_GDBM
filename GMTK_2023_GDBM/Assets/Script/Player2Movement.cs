@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player2Movement : PlayerController
 {
-
+    private bool usingGamepad = false;
 
     // Update is called once per frame
     void Update() 
@@ -24,15 +24,33 @@ public class Player2Movement : PlayerController
         movement.SetDirection(PlayerDirection);
 
         // Check sprint
-        if (Input.GetKeyDown(KeyCode.RightShift))
-            movement.SetSpeed(sprintSpeed);
-
-        if (Input.GetKeyUp(KeyCode.RightShift))
-            movement.SetSpeed(defaultSpeed);
+        CheckSprintInput();
 
         // Check dash
         if (Input.GetKeyDown(KeyCode.Space))
             print("DASH");//movement.SetSpeed(sprintSpeed);
+    }
+
+    private void CheckSprintInput()
+    {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            movement.SetSpeed(sprintSpeed);
+            usingGamepad = false;
+        }
+
+        if (Input.GetAxisRaw("SprintGamepadPlayer2") > 0)
+        {
+            movement.SetSpeed(sprintSpeed);
+            usingGamepad = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightShift) && !usingGamepad)
+            movement.SetSpeed(defaultSpeed);
+
+        if (Input.GetAxisRaw("SprintGamepadPlayer2") <= 0 && usingGamepad)
+            movement.SetSpeed(defaultSpeed);
+
     }
 
 }
