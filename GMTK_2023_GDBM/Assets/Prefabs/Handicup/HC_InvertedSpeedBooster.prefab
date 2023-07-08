@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9124118998731807786}
   - component: {fileID: -2804843381952618226}
   - component: {fileID: -2580739509936898533}
+  - component: {fileID: -5043715400700137387}
   m_Layer: 0
   m_Name: HC_InvertedSpeedBooster
   m_TagString: Untagged
@@ -47,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGoalCenter: {x: 0, y: 0}
   accMulti: 5
+  player1BoostPlacement: []
+  player2BoostPlacement: []
 --- !u!212 &-2804843381952618226
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,3 +127,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &-5043715400700137387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308604451295082848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092ff051829a9494e8f85bf63d3528be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handicupNumber: 3

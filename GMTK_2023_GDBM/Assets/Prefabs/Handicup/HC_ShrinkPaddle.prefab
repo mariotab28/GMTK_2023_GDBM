@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6443022527560802234}
   - component: {fileID: 7062117182148452253}
+  - component: {fileID: -3675008767592921080}
   m_Layer: 0
   m_Name: HC_ShrinkPaddle
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedPlayer: 1
   sizeReductionMulti: 0.5
+--- !u!114 &-3675008767592921080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919133631812435106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092ff051829a9494e8f85bf63d3528be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handicupNumber: 1

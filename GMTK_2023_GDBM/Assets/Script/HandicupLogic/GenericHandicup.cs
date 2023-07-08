@@ -1,8 +1,10 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class HandicupController : MonoBehaviour
+public class GenericHandicup : MonoBehaviour
 {
+    public int handicupNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +15,5 @@ public class HandicupController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void addHandicup(PlayerInfo player){
-        Debug.Log("hola");
     }
 }
