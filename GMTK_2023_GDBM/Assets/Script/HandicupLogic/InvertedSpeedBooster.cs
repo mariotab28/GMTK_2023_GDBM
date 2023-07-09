@@ -41,7 +41,7 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
                 {
                     playerGoalCenter = player2GoalCenter;
                 }
-                Debug.Log(playerGoalCenter);
+
                 Vector3 acceleratedVector = (playerGoalCenter - rb.transform.position) * accMulti;
                 rb.velocity = acceleratedVector;
             }

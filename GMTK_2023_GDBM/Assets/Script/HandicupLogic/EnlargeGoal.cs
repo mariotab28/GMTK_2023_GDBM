@@ -9,6 +9,8 @@ public class EnlargeGoal : MonoBehaviour, IGenericHandicup
     public float sizeEnlargeMulti;
     public int handicupNumber;
     public PlayerInfo playerInfo;
+    public float maxSize = 6;
+    private Vector3 _maxSizeVector = new Vector3(1, 6, 1);
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,8 @@ public class EnlargeGoal : MonoBehaviour, IGenericHandicup
 
     private void calculateGoalObj(){
         goalObj = playerInfo.AssignedGoal;
-        goalObj.transform.localScale = new Vector3(goalObj.transform.localScale.x, goalObj.transform.localScale.y * sizeEnlargeMulti, goalObj.transform.localScale.z);
+        Vector3 newScale = new Vector3(goalObj.transform.localScale.x, goalObj.transform.localScale.y * sizeEnlargeMulti, goalObj.transform.localScale.z);
+        goalObj.transform.localScale = (newScale.y > 6) ? _maxSizeVector : newScale;
     }
 
 }

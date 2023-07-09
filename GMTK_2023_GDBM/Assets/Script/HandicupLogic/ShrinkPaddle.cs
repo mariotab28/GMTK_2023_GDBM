@@ -9,6 +9,8 @@ public class ShrinkPaddle : MonoBehaviour, IGenericHandicup
     public float sizeReductionMulti;
     public int handicupNumber;
     public PlayerInfo playerInfo;
+    public float minSize = 0.4f;
+    private Vector3 _minSizeVector = new Vector3(0.4f, 0.4f, 0.4f);
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,9 @@ public class ShrinkPaddle : MonoBehaviour, IGenericHandicup
 
     private void ModifyPaddle(){
         paddleObj = playerInfo.AssignedPaddle;
-        paddleObj.transform.localScale = paddleObj.transform.localScale * sizeReductionMulti;
+        Vector3 newScale = paddleObj.transform.localScale * sizeReductionMulti;
+        paddleObj.transform.localScale = (newScale.x < 0.4) ? _minSizeVector : newScale;
+        Debug.Log(paddleObj.transform.localScale);
     }
 
 }
