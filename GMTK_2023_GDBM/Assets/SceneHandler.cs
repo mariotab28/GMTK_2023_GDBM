@@ -8,6 +8,11 @@ public class SceneHandler : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        GameObject globalData = GameObject.Find("GlobalData");
+        if (globalData)
+        {
+            Destroy(globalData);
+        }
         SceneManager.LoadScene("TitleScreen");
     }
 

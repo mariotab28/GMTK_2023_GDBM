@@ -16,6 +16,7 @@ public class SFXController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        GetVolumeFromGlobalData();
         originalPitch = audioSource.pitch;
         SetAllAudioSourcesToVolume();
     }
@@ -28,12 +29,11 @@ public class SFXController : MonoBehaviour
 
     public void PlayCollideWithBallSound()
     {
-        int soundVarietyHalf = Mathf.FloorToInt(soundVariety/2);
-        float pitchMultiplier = (float)Random.Range(-soundVarietyHalf,soundVarietyHalf);
+        int soundVarietyHalf = Mathf.FloorToInt(soundVariety / 2);
+        float pitchMultiplier = (float)Random.Range(-soundVarietyHalf, soundVarietyHalf);
         ballHitAudioSource.pitch = originalPitch + ballHitPitchScale * pitchMultiplier;
         AudioClip ballAudio = GetAudioClipDefinition(ListedAudioClip.PaddleBallCollision).audioClip;
         ballHitAudioSource.PlayOneShot(ballAudio);
-    
     }
 
     public void PlayMainTheme()
@@ -46,9 +46,21 @@ public class SFXController : MonoBehaviour
         mainThemeAudioSource.Stop();
     }
 
+    private void GetVolumeFromGlobalData()
+    {
+        GameObject globalDataHolder = GameObject.Find("GlobalData");
+        if (globalDataHolder)
+        {
+            GlobalData globalData = globalDataHolder.GetComponent<GlobalData>();
+            generalAudioVolume = globalData.GetVolume();
+        }
+    }
+
     private AudioClipDefinition GetAudioClipDefinition(ListedAudioClip audioClipToUseIdentifier)
     {
-        return audioClipList.Find((audioClipDefinition) => audioClipDefinition.identifier == audioClipToUseIdentifier);
+        return audioClipList.Find(
+            (audioClipDefinition) => audioClipDefinition.identifier == audioClipToUseIdentifier
+        );
     }
 
     private void SetAllAudioSourcesToVolume()
@@ -57,15 +69,16 @@ public class SFXController : MonoBehaviour
         ballHitAudioSource.volume = generalAudioVolume;
         mainThemeAudioSource.volume = generalAudioVolume;
     }
-
 }
 
 [System.Serializable]
-public struct AudioClipDefinition {
+public struct AudioClipDefinition
+{
     public ListedAudioClip identifier;
     public AudioClip audioClip;
 }
 
-public enum ListedAudioClip {
+public enum ListedAudioClip
+{
     PaddleBallCollision
 }
