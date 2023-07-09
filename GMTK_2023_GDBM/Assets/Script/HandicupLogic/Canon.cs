@@ -7,7 +7,7 @@ public class Canon : MonoBehaviour, IGenericHandicup
     public GameObject prefab;
     public UnityEngine.Vector3 initialDirectionVector;
     public int initialVelocity;
-    public UnityEngine.Vector3 spawnPosition;
+    private UnityEngine.Vector3 spawnPosition;
     public float spawnTimer;
 
     public int handicupNumber;
@@ -26,6 +26,7 @@ public class Canon : MonoBehaviour, IGenericHandicup
     // Start is called before the first frame update
     void Start()
     {
+        spawnPosition = gameObject.transform.Find("SpawnPoint").transform.position;
         InvokeRepeating("SpawnObj", spawnTimer, spawnTimer);
     }
 
@@ -35,7 +36,7 @@ public class Canon : MonoBehaviour, IGenericHandicup
         if(playerInfo.PlayerNumber == PlayerNumber.PlayerOne) {
             initialDirectionVector = player1GoalCenter - spawnPosition;
         } else {
-            initialDirectionVector = player2GoalCenter- spawnPosition;
+            initialDirectionVector = player2GoalCenter - spawnPosition;
         }
          
     }

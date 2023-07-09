@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8b70a9b8bb1f84a92a2608cfd7446f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeReductionMulti: 0.5
+  sizeReductionMulti: 0.9
   handicupNumber: 1

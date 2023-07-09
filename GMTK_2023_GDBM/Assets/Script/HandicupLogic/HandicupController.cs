@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 public class HandicupController : MonoBehaviour
@@ -23,12 +24,13 @@ public class HandicupController : MonoBehaviour
     public void addHandicup(PlayerInfo player){
         Transform spawnPosition;
         GameObject hc;
+        var random = new System.Random();
+        int index = random.Next(0, 4);
 
         if(player.PlayerNumber == PlayerNumber.PlayerOne){ // Player 1
-            int index = Random.Range(0, 3);
             hc = _handicupObjListPlayer1[index];
             IGenericHandicup gHScript = hc.GetComponent<IGenericHandicup>();
-            gHScript.SetPlayerInfo(player);
+
             int handicupType = gHScript.GetHandicupNumber();
 
             if(handicupType == 3){ // Inverted Velocity Booster
@@ -47,10 +49,9 @@ public class HandicupController : MonoBehaviour
                 spawnPosition = new GameObject().transform;
             }
         } else{ // Player 2
-            int index = Random.Range(0, 3);
             hc = _handicupObjListPlayer2[index];
             IGenericHandicup gHScript = hc.GetComponent<IGenericHandicup>();
-            gHScript.SetPlayerInfo(player);
+
             int handicupType = gHScript.GetHandicupNumber();
 
             if(handicupType == 3){ // Inverted Velocity Booster
@@ -70,6 +71,8 @@ public class HandicupController : MonoBehaviour
             }
         }
         
-        Instantiate(hc, spawnPosition);
+        GameObject obj = Instantiate(hc, spawnPosition);
+        IGenericHandicup scriptObj = obj.GetComponent<IGenericHandicup>();
+        scriptObj.SetPlayerInfo(player);
     }
 }
