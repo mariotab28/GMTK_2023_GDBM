@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95a133f7e28ce7468bb1658eff564a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4153837988240932223, guid: 759d23d5411b8e04fbf69c29b8695667, type: 3}
+  prefab: {fileID: 8632461230630978387, guid: 554844adcca7cdd40a33bc8882725e6d, type: 3}
   initialDirectionVector: {x: -1, y: -0.4, z: 0}
   initialVelocity: 3
   spawnPosition: {x: 5.2183733, y: 2.816769, z: 0}

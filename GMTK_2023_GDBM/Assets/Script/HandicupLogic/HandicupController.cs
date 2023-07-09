@@ -9,15 +9,9 @@ public class HandicupController : MonoBehaviour
 
     public List<Transform> canonListPlayer1;
     public List<Transform> canonListPlayer2;
-
-    private int _canonListPlayer1Index = 0;
-    private int _canonListPlayer2Index = 0;
     
     public List<Transform> boostListPlayer1;
     public List<Transform> boostListPlayer2;
-
-    private int _boostListPlayer1Index = 0;
-    private int _boostListPlayer2Index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,19 +30,17 @@ public class HandicupController : MonoBehaviour
             IGenericHandicup gHScript = hc.GetComponent<IGenericHandicup>();
             gHScript.SetPlayerInfo(player);
             int handicupType = gHScript.GetHandicupNumber();
-            Debug.Log(handicupType);
+
             if(handicupType == 3){ // Inverted Velocity Booster
-                spawnPosition = boostListPlayer1[_boostListPlayer1Index];
-                boostListPlayer1.RemoveAt(_boostListPlayer1Index);
-                _boostListPlayer1Index++;
-                if(_boostListPlayer1Index > 5) { // Max Booster
+                spawnPosition = boostListPlayer1[0];
+                boostListPlayer1.RemoveAt(0);
+                if(boostListPlayer1.Count == 0) { // Max Booster
                     _handicupObjListPlayer1.RemoveAt(index);
                 }
             } else if(handicupType == 4){ // Canon
-                spawnPosition = canonListPlayer1[_canonListPlayer1Index];
-                canonListPlayer1.RemoveAt(_canonListPlayer1Index);
-                _canonListPlayer1Index++;
-                if(_boostListPlayer1Index > 3) { // Max Canons
+                spawnPosition = canonListPlayer1[0];
+                canonListPlayer1.RemoveAt(0);
+                if(canonListPlayer1.Count == 0) { // Max Canons
                     _handicupObjListPlayer1.RemoveAt(index);
                 }
             } else {
@@ -62,17 +54,15 @@ public class HandicupController : MonoBehaviour
             int handicupType = gHScript.GetHandicupNumber();
 
             if(handicupType == 3){ // Inverted Velocity Booster
-                spawnPosition = boostListPlayer2[_boostListPlayer2Index];
-                boostListPlayer2.RemoveAt(_boostListPlayer2Index);
-                _boostListPlayer2Index++;
-                if(_boostListPlayer2Index > 5) { // Max Booster
+                spawnPosition = boostListPlayer2[0];
+                boostListPlayer2.RemoveAt(0);
+                if(boostListPlayer2.Count == 0) { // Max Booster
                     _handicupObjListPlayer2.RemoveAt(index);
                 }
             } else if(handicupType == 4){ // Canon
-                spawnPosition = canonListPlayer2[_canonListPlayer2Index];
-                canonListPlayer2.RemoveAt(_canonListPlayer2Index);
-                _canonListPlayer2Index++;
-                if(_canonListPlayer2Index > 3) { // Max Canons
+                spawnPosition = canonListPlayer2[0];
+                canonListPlayer2.RemoveAt(0);
+                if(canonListPlayer2.Count == 0) { // Max Canons
                     _handicupObjListPlayer2.RemoveAt(index);
                 }
             } else {
