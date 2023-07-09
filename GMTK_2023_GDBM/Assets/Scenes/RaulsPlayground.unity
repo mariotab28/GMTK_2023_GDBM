@@ -181,7 +181,7 @@ MonoBehaviour:
   mainThemeAudioSource: {fileID: 2095171039}
   audioClipList:
   - identifier: 0
-    audioClip: {fileID: 8300000, guid: b3d750637f44fcb4987914fa5818d95c, type: 3}
+    audioClip: {fileID: 8300000, guid: 6c4e997fa37e8b74c975783d918104c5, type: 3}
   ballHitPitchScale: 0.05
   soundVariety: 16
 --- !u!82 &52032743
@@ -680,8 +680,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2228,9 +2228,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 193916442, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1061395411, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315372832, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1474395409, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_RootOrder
