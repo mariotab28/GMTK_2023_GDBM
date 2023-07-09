@@ -123,6 +123,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &660290417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660290419}
+  - component: {fileID: 660290418}
+  m_Layer: 3
+  m_Name: MidFieldCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!68 &660290418
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660290417}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: 5}
+  - {x: 0, y: -5}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!4 &660290419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660290417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.580029, y: 1.580029, z: 1.580029}
+  m_Children: []
+  m_Father: {fileID: 1957946263}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937948948
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +480,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1957946263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 227665092, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+  m_PrefabInstance: {fileID: 1438757580766629545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121693140
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +551,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2121693141}
+    - target: {fileID: 349025875461895544, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 427631600534461817, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: handicupController
       value: 
@@ -501,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1155539840}
+    - target: {fileID: 621431000145971416, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3947542578688342253, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -545,6 +611,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3966902108767078741, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270957740404372725, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4597345136415376161, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_TagString
       value: Goal
@@ -552,6 +626,14 @@ PrefabInstance:
     - target: {fileID: 4597345136780795868, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_TagString
       value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211596639813213404, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520155798207537532, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7341747483890835408, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_Name
