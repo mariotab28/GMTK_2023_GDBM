@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1v1
   m_EditorClassIdentifier: 
   matchType: 1
-  matchSecondsDuration: 120
+  matchSecondsDuration: 2
