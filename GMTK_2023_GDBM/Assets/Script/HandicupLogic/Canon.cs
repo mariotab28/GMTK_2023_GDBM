@@ -5,9 +5,9 @@ using UnityEngine;
 public class Canon : MonoBehaviour, IGenericHandicup
 {
     public GameObject prefab;
-    public UnityEngine.Vector3 initialDirectionVector;
+    private UnityEngine.Vector3 initialDirectionVector;
     public int initialVelocity;
-    private UnityEngine.Vector3 spawnPosition;
+    public GameObject spawnPoint;
     public float spawnTimer;
 
     [SerializeField] public PlayerValues defaultPlayer; // for testing
@@ -21,15 +21,14 @@ public class Canon : MonoBehaviour, IGenericHandicup
     [ContextMenu("Spawn Object")]
     public void SpawnObj(){
 
-        GameObject obj =Instantiate(prefab, spawnPosition, new UnityEngine.Quaternion(0,0,0,0));
+        GameObject obj =Instantiate(prefab, spawnPoint.transform.position, new UnityEngine.Quaternion(0,0,0,0));
         obj.GetComponent<Rigidbody2D>().velocity = initialDirectionVector  * initialVelocity;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnPosition = gameObject.transform.Find("SpawnPoint").transform.position;
-        InvokeRepeating("SpawnObj", spawnTimer, spawnTimer);
+        InvokeRepeating("SpawnObj", Random.Range(0.5f, spawnTimer), spawnTimer);
 
         if (playerInfo == null)
         {
@@ -41,10 +40,12 @@ public class Canon : MonoBehaviour, IGenericHandicup
         playerInfo = player;
 
         if(playerInfo.PlayerNumber == PlayerNumber.PlayerOne) {
-            initialDirectionVector = player1GoalCenter - spawnPosition;
+            initialDirectionVector = player1GoalCenter - spawnPoint.transform.position;
         } else {
-            initialDirectionVector = player2GoalCenter - spawnPosition;
+            initialDirectionVector = player2GoalCenter - spawnPoint.transform.position;
         }
+
+        initialDirectionVector.Normalize();
          
     }
 

@@ -20,7 +20,13 @@ public class ExtraBallController : MonoBehaviour
         if(other.gameObject.tag == "Goal"){
             Destroy(gameObject);
         }
+    }
 
-
+    public void DestroyAllExtrtaBalls(Object player){
+        ExtraBallController[] extraBalls = (FindObjectsOfType<ExtraBallController>() as ExtraBallController[]);
+        for (int i = 0; i < extraBalls.Length; i++)
+	    {
+		    Destroy(extraBalls[i].gameObject);
+        }
     }
 }

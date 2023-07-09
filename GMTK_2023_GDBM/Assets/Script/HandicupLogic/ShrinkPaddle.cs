@@ -33,7 +33,6 @@ public class ShrinkPaddle : MonoBehaviour, IGenericHandicup
         paddleObj = playerInfo.AssignedPaddle;
         Vector3 newScale = paddleObj.transform.localScale * sizeReductionMulti;
         paddleObj.transform.localScale = (newScale.x < 0.4) ? _minSizeVector : newScale;
-        Debug.Log(paddleObj.transform.localScale);
     }
 
 }

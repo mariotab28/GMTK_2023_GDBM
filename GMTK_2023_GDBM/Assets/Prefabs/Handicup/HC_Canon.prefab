@@ -211,9 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8632461230630978387, guid: 554844adcca7cdd40a33bc8882725e6d, type: 3}
-  initialDirectionVector: {x: 0, y: -1, z: 0}
-  initialVelocity: 1
-  spawnTimer: 2
+  initialVelocity: 3
+  spawnPoint: {fileID: 1431661166728607389}
+  spawnTimer: 4
   defaultPlayer:
     playerNumber: 0
     paddle: {fileID: 0}
