@@ -967,6 +967,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2303615963978352187, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3947542578688342253, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_RootOrder
       value: 0
