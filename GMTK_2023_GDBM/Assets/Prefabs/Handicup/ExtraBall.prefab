@@ -68,8 +68,16 @@ PrefabInstance:
       value: ExtraBall
       objectReference: {fileID: 0}
     - target: {fileID: 4862961698314240233, guid: 35efab67dbdcd1f43ab70870ccc29eff, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862961698314240233, guid: 35efab67dbdcd1f43ab70870ccc29eff, type: 3}
       propertyPath: m_TagString
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002191695521726820, guid: 35efab67dbdcd1f43ab70870ccc29eff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4872844329611005974, guid: 35efab67dbdcd1f43ab70870ccc29eff, type: 3}

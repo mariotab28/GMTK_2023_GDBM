@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
 {
-    public Vector3 playerGoalCenter;
+    private Vector3 playerGoalCenter;
     public float accMulti;
     public int handicupNumber;
     public PlayerInfo playerInfo;
+    private Vector3 player1GoalCenter = new Vector3(-8, 0, 0);
+    private Vector3 player2GoalCenter = new Vector3(8, 0, 0);
 
     void Start()
     {
@@ -20,6 +22,11 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
     {
         if(other.gameObject.tag == "Ball"){
             if(other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
+                if(playerInfo.PlayerNumber == PlayerNumber.PlayerOne) {
+                    playerGoalCenter = player1GoalCenter;
+                } else {
+                    playerGoalCenter = player2GoalCenter;
+                }
                 Vector3 acceleratedVector = (playerGoalCenter - rb.transform.position) * accMulti;
                 rb.velocity = acceleratedVector;
             }
