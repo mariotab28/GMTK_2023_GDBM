@@ -2,31 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct PlayerValues
+{
+    public PlayerNumber playerNumber;
+    public GameObject paddle;
+    public GameObject goal;
+}
+
 public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
 {
     private Vector3 playerGoalCenter;
     public float accMulti;
     public int handicupNumber;
     public PlayerInfo playerInfo;
+    [SerializeField] public PlayerValues defaultPlayer; // for testing
     private Vector3 player1GoalCenter = new Vector3(-8, 0, 0);
     private Vector3 player2GoalCenter = new Vector3(8, 0, 0);
 
     void Start()
     {
-        if(playerInfo != null){
+        if (playerInfo != null)
+        {
             setPlayerGoalCenter();
-        } 
+        }
+        else
+        {
+            playerInfo = new PlayerInfo(defaultPlayer.playerNumber, defaultPlayer.paddle, defaultPlayer.goal);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if(other.gameObject.tag == "Ball"){
-            if(other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
-                
-                if(playerInfo.PlayerNumber == PlayerNumber.PlayerOne) {
+        if (other.gameObject.tag == "Ball")
+        {
+            if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+            {
+
+                if (playerInfo.PlayerNumber == PlayerNumber.PlayerOne)
+                {
                     playerGoalCenter = player1GoalCenter;
-                } else {
+                }
+                else
+                {
                     playerGoalCenter = player2GoalCenter;
                 }
                 Debug.Log(playerGoalCenter);
@@ -36,15 +55,18 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
         }
     }
 
-    public void SetPlayerInfo( PlayerInfo player){
+    public void SetPlayerInfo(PlayerInfo player)
+    {
         playerInfo = player;
     }
 
-    public int GetHandicupNumber(){
+    public int GetHandicupNumber()
+    {
         return handicupNumber;
     }
 
-    private void setPlayerGoalCenter(){
+    private void setPlayerGoalCenter()
+    {
         playerGoalCenter = playerInfo.AssignedGoal.transform.position;
     }
 
