@@ -17,11 +17,9 @@ public class ExtraBallController : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Obstacle"){
-            logic.GameOver();   
-            cubeIsAlive = false; 
+        if(other.gameObject.tag == "Goal"){
         }
 
-        
+
     }
 }

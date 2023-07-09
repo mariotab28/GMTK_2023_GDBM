@@ -545,6 +545,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4597345136415376161, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597345136780795868, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     - target: {fileID: 7341747483890835408, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_Name
       value: GameCore
