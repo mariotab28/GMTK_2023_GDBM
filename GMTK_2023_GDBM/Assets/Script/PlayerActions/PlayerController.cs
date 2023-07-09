@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Quaternion startingRotation;
     private Rigidbody2D rigBody;
 
-    UnityEvent collideWithBall;
+    public UnityEvent collideWithBall;
 
     
     void Awake()
@@ -31,11 +31,6 @@ public class PlayerController : MonoBehaviour
         startingPosition = transform.position;
         startingRotation = transform.rotation;
         rigBody = GetComponent<Rigidbody2D>();
-
-        if (collideWithBall == null)
-            collideWithBall = new UnityEvent();
-
-        collideWithBall.AddListener(OnCollideWithBall);
     }
 
     private void Start()
@@ -53,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollideWithBall()
     {
-        //Debug.Log("Collide with ball");
+        collideWithBall.Invoke();
     }
 
     public void ResetStartingPosition()
