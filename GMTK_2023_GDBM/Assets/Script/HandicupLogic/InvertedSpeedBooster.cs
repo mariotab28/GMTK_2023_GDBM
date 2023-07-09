@@ -20,13 +20,16 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
+
         if(other.gameObject.tag == "Ball"){
             if(other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)){
+                
                 if(playerInfo.PlayerNumber == PlayerNumber.PlayerOne) {
                     playerGoalCenter = player1GoalCenter;
                 } else {
                     playerGoalCenter = player2GoalCenter;
                 }
+                Debug.Log(playerGoalCenter);
                 Vector3 acceleratedVector = (playerGoalCenter - rb.transform.position) * accMulti;
                 rb.velocity = acceleratedVector;
             }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ee352e6a705a84998581a83792c92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accMulti: 5
+  accMulti: 3
   handicupNumber: 3
 --- !u!212 &-2804843381952618226
 SpriteRenderer:
