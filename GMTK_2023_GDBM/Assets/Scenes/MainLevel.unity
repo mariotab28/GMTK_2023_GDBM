@@ -631,6 +631,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2121693141}
+    - target: {fileID: 923808110, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2121693141}
+    - target: {fileID: 923808110, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 1315372833, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -639,6 +647,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2121693141}
+    - target: {fileID: 1759573274, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2121693141}
+    - target: {fileID: 1759573274, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 427631600534461817, guid: c120b22bec4a8a6468a282cd4caf0915, type: 3}
       propertyPath: handicupController
       value: 
