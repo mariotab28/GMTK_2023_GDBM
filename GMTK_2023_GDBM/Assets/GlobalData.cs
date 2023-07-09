@@ -16,7 +16,9 @@ public class GlobalData : MonoBehaviour
         DontDestroyOnLoad(transform.gameObject);
     }
 
-    void Start()
+    void Start() { }
+
+    public void InitializeVolue()
     {
         slider = GameObject.Find(VolumeSliderGameObjectName).GetComponent<Slider>();
         slider.value = volume * differenceBetweenInputAndVolume;

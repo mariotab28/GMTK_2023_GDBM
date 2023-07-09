@@ -28,7 +28,17 @@ public class MainMenuLogic : MonoBehaviour
         SceneManager.LoadScene("MainLevel");
     }
 
+    public void StartGameAI(){
+        SceneManager.LoadScene("AILevel");
+    }
+
     public void ChangeVolume(float value){
         
     }
+
+    public void ExitGame()
+    {
+        Screen.fullScreen = false;
+    }
+
 }

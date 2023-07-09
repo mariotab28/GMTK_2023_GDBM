@@ -33,7 +33,7 @@ public class GoalUIController : MonoBehaviour
         switch (addedHandicapIndex)
         {
             case 0:
-                usedText = "Goal Shrink";
+                usedText = "Paddle Shrink";
                 break;
             case 1:
                 usedText = "Goal Enlarge";
