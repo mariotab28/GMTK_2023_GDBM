@@ -58,7 +58,7 @@ public class MatchLogic : MonoBehaviour
             PlayerAssignedElements pTwoElems = playerAssignedElements.Find((definition) => definition.playerNumber == PlayerNumber.PlayerTwo);
             playersInfo = new List<PlayerInfo>
             {
-                new PlayerInfo(PlayerNumber.PlayerOne, pTwoElems.paddle, pTwoElems.goal),
+                new PlayerInfo(PlayerNumber.PlayerOne, pOneElems.paddle, pOneElems.goal),
                 new PlayerInfo(PlayerNumber.PlayerTwo, pTwoElems.paddle, pTwoElems.goal)
             };
         }
