@@ -10,6 +10,8 @@ public class Canon : MonoBehaviour, IGenericHandicup
     private UnityEngine.Vector3 spawnPosition;
     public float spawnTimer;
 
+    [SerializeField] public PlayerValues defaultPlayer; // for testing
+
     public int handicupNumber;
     public PlayerInfo playerInfo;
 
@@ -28,6 +30,11 @@ public class Canon : MonoBehaviour, IGenericHandicup
     {
         spawnPosition = gameObject.transform.Find("SpawnPoint").transform.position;
         InvokeRepeating("SpawnObj", spawnTimer, spawnTimer);
+
+        if (playerInfo == null)
+        {
+            playerInfo = new PlayerInfo(defaultPlayer.playerNumber, defaultPlayer.paddle, defaultPlayer.goal);
+        }
     }
 
     public void SetPlayerInfo( PlayerInfo player){
