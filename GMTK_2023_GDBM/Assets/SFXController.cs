@@ -69,6 +69,13 @@ public class SFXController : MonoBehaviour
         ballHitAudioSource.volume = generalAudioVolume;
         mainThemeAudioSource.volume = generalAudioVolume;
     }
+
+    public void SetVolume(float newVolume)
+    {
+        generalAudioVolume = newVolume / 100f;
+        SetAllAudioSourcesToVolume();
+    }
+
 }
 
 [System.Serializable]
