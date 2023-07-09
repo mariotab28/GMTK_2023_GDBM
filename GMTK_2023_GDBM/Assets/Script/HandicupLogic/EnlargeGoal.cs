@@ -28,7 +28,7 @@ public class EnlargeGoal : MonoBehaviour, IGenericHandicup
 
     private void calculateGoalObj(){
         goalObj = playerInfo.AssignedGoal;
-        goalObj.transform.localScale = new Vector3(goalObj.transform.localScale.x, sizeEnlargeMulti, goalObj.transform.localScale.z);
+        goalObj.transform.localScale = new Vector3(goalObj.transform.localScale.x, goalObj.transform.localScale.y * sizeEnlargeMulti, goalObj.transform.localScale.z);
     }
 
 }

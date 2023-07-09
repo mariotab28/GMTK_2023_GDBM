@@ -30,13 +30,13 @@ public class HandicupController : MonoBehaviour
         Transform spawnPosition;
         GameObject hc;
 
-        if(player.PlayerNumber == 0){ // Player 1
+        if(player.PlayerNumber == PlayerNumber.PlayerOne){ // Player 1
             int index = Random.Range(0, 3);
             hc = _handicupObjListPlayer1[index];
             IGenericHandicup gHScript = hc.GetComponent<IGenericHandicup>();
             gHScript.SetPlayerInfo(player);
             int handicupType = gHScript.GetHandicupNumber();
-
+            Debug.Log(handicupType);
             if(handicupType == 3){ // Inverted Velocity Booster
                 spawnPosition = boostListPlayer1[_boostListPlayer1Index];
                 boostListPlayer1.RemoveAt(_boostListPlayer1Index);

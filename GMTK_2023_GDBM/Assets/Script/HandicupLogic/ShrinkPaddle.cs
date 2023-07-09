@@ -29,7 +29,7 @@ public class ShrinkPaddle : MonoBehaviour, IGenericHandicup
 
     private void ModifyPaddle(){
         paddleObj = playerInfo.AssignedPaddle;
-        paddleObj.transform.localScale = new Vector3(sizeReductionMulti, sizeReductionMulti, sizeReductionMulti);
+        paddleObj.transform.localScale = paddleObj.transform.localScale * sizeReductionMulti;
     }
 
 }
