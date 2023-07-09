@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IGenericHandicup
 {
-    void SetPlayerInfo(PlayerInfo player);
+    public void SetPlayerInfo(PlayerInfo player);
 }
