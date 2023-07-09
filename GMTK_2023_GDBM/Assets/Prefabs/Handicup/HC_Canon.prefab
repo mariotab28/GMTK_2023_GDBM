@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 416847916168853930}
   - component: {fileID: -854434820645868933}
   - component: {fileID: 3481608308344460464}
-  - component: {fileID: -4829630605758114619}
   m_Layer: 0
   m_Name: HC_Canon
   m_TagString: Untagged
@@ -101,16 +100,4 @@ MonoBehaviour:
   initialVelocity: 3
   spawnPosition: {x: 5.2183733, y: 2.816769, z: 0}
   spawnTimer: 1
---- !u!114 &-4829630605758114619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138941022349759795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 092ff051829a9494e8f85bf63d3528be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   handicupNumber: 4

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2384311028124775331}
   - component: {fileID: -7722041399658401881}
-  - component: {fileID: -3880925828543347516}
   m_Layer: 0
   m_Name: HC_EnlargeGoal
   m_TagString: Untagged
@@ -44,18 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b872a9be075b16642b634ee047d42c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedPlayer: 0
   sizeEnlargeMulti: 1.5
---- !u!114 &-3880925828543347516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7828696505500196247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 092ff051829a9494e8f85bf63d3528be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   handicupNumber: 2

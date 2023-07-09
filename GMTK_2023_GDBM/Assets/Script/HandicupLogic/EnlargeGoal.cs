@@ -12,11 +12,23 @@ public class EnlargeGoal : MonoBehaviour, IGenericHandicup
     // Start is called before the first frame update
     void Start()
     {
+        if(playerInfo != null){
+            calculateGoalObj();
+        }
+    }
+
+    public void SetPlayerInfo( PlayerInfo player){
+        playerInfo = player;
+        calculateGoalObj();
+    }
+
+    public int GetHandicupNumber(){
+        return handicupNumber;
+    }
+
+    private void calculateGoalObj(){
         goalObj = playerInfo.AssignedGoal;
         goalObj.transform.localScale = new Vector3(goalObj.transform.localScale.x, sizeEnlargeMulti, goalObj.transform.localScale.z);
     }
 
-    void SetPlayerInfo( PlayerInfo player){
-        playerInfo = player;
-    }
 }

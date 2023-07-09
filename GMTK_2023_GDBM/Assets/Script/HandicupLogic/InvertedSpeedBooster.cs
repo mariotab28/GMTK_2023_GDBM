@@ -11,7 +11,9 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
 
     void Start()
     {
-        playerGoalCenter = playerInfo.AssignedGoal.transform.position;
+        if(playerInfo != null){
+            setPlayerGoalCenter();
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -24,8 +26,16 @@ public class InvertedSpeedBooster : MonoBehaviour, IGenericHandicup
         }
     }
 
-    void SetPlayerInfo( PlayerInfo player){
+    public void SetPlayerInfo( PlayerInfo player){
         playerInfo = player;
+    }
+
+    public int GetHandicupNumber(){
+        return handicupNumber;
+    }
+
+    private void setPlayerGoalCenter(){
+        playerGoalCenter = playerInfo.AssignedGoal.transform.position;
     }
 
 

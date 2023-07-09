@@ -12,11 +12,24 @@ public class ShrinkPaddle : MonoBehaviour, IGenericHandicup
     // Start is called before the first frame update
     void Start()
     {
+        if(playerInfo != null){
+            ModifyPaddle();
+        }
+        
+    }
+
+    public void SetPlayerInfo( PlayerInfo player){
+        playerInfo = player;
+        ModifyPaddle();
+    }
+
+    public int GetHandicupNumber(){
+        return handicupNumber;
+    }
+
+    private void ModifyPaddle(){
         paddleObj = playerInfo.AssignedPaddle;
         paddleObj.transform.localScale = new Vector3(sizeReductionMulti, sizeReductionMulti, sizeReductionMulti);
     }
 
-    void SetPlayerInfo( PlayerInfo player){
-        playerInfo = player;
-    }
 }

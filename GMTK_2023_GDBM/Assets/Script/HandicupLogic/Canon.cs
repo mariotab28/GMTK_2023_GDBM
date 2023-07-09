@@ -26,7 +26,12 @@ public class Canon : MonoBehaviour, IGenericHandicup
         InvokeRepeating("SpawnObj", spawnTimer, spawnTimer);
     }
 
-    void SetPlayerInfo( PlayerInfo player){
+    public void SetPlayerInfo( PlayerInfo player){
         playerInfo = player;
     }
+
+    public int GetHandicupNumber(){
+        return handicupNumber;
+    }
+
 }
