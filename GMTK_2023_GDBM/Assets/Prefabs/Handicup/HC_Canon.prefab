@@ -99,8 +99,7 @@ MonoBehaviour:
   prefab: {fileID: 8632461230630978387, guid: 554844adcca7cdd40a33bc8882725e6d, type: 3}
   initialDirectionVector: {x: -1, y: -0.4, z: 0}
   initialVelocity: 1
-  spawnPosition: {x: 5.2183733, y: 2.816769, z: 0}
-  spawnTimer: 3
+  spawnTimer: 2
   handicupNumber: 4
 --- !u!1 &1431661166728607389
 GameObject:

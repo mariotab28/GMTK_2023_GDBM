@@ -853,6 +853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d60933f5a138a48af62d1c1657f794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetPositionsEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!68 &2092681557
 EdgeCollider2D:
   m_ObjectHideFlags: 0

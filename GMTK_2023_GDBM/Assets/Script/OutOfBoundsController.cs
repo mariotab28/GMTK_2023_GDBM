@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OutOfBoundsController : MonoBehaviour
 {
+        public UnityEvent resetPositionsEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class OutOfBoundsController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Ball"){
-            //MatchLogic.ContinueMatchAfterScore();
+            //resetPositionsEvent.Invoke();
         }
     }
 }
