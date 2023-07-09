@@ -7869,6 +7869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationGoalCounter: {fileID: 6241721897769174472}
   animationPlayerWhoScored: {fileID: 6241721896958371702}
+  handicapText: {fileID: 0}
   animationFinished:
     m_PersistentCalls:
       m_Calls:

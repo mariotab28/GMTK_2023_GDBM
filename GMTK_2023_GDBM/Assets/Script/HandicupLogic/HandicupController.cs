@@ -13,6 +13,7 @@ public class HandicupController : MonoBehaviour
     
     public List<Transform> boostListPlayer1;
     public List<Transform> boostListPlayer2;
+    public GoalUIController goalUIController;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class HandicupController : MonoBehaviour
         GameObject hc;
         var random = new System.Random();
         int index = random.Next(0, 4);
+        goalUIController.UpdateAddedHandicap(index);
 
         if(player.PlayerNumber == PlayerNumber.PlayerOne){ // Player 1
             hc = _handicupObjListPlayer1[index];
